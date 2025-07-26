@@ -1,36 +1,171 @@
-.nav-item :hover {
-    background-color: rgb(248, 245, 245);
-    color: black;
-    text-decoration: none;
+*{
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* main settings */
+/* Navigation Bar */
+
+.navigationBar{
+    position: absolute;
+    padding: 20px 100px;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+    background: black;
+}
+.navigationBar .logo{
+    position: relative;
+    font-weight: 500;
+    letter-spacing: 5px;
+    font-size: 2em;
+    text-decoration: none;
+    color: rgb(240, 235, 235);
+}
+.navigationBar .logo span{
+    color: #21ffe6;
+}
+.navigation-items {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.navigation-items a{
+    text-decoration: none;
+    color: #21ffe6
+}
+.navigation-items a:hover{
+    background: white;
+    color: black;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+
+/* Main Page */
 .main{
-    background: url(./images/Electrical\ Standards.png)no-repeat;
-    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0px 100px;
+    min-height: 100vh;
+}
+.main::before{
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
     height: 100vh;
+    background: #21ffe6;
+    z-index: 0;
+    width: 5%;
+    transform-origin: top;
+    transform: skewX(-25deg);
 }
-.main p{
-    word-wrap: break-word;
-    font-weight: 2;
+.main .main-background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    right: 0;
+    object-fit: cover;
+    opacity: 0.17;
+    pointer-events: none;
 }
-.main h3{
-    font-size: 2rem;
-    font-weight: 700;
+.main .textbox{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    max-width: 600px;
 }
-span::before{
+.main .textbox h2{
+    font-size: 40px;
+    font-weight: 900;
+}
+
+/* Animation for my Daniel */
+.textbox h2 span::before{
     content: "";
     animation: name 4s infinite linear;
 }
 
 @keyframes name {
     0%{
-        content: "Daniel"
-    }
-    50%{
         content: "Egbogota"
     }
     100%{
         content: "Onyeka";
     }
 }
+
+.main .textbox p{
+    font-size: 18px;
+    margin: 5px 0 25px;
+}
+.main .textbox a{
+    text-decoration: none;
+    background: #21ffe6;
+    width: 30%;
+    color: black;
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    border-radius: 7px;
+}
+.main .imgbox{
+    position: relative;
+}
+
+
+
+/* Project section style */
+.project-list{
+    position: relative;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    column-gap: 40px;
+    row-gap: 40px;
+    height: 100vh;
+    padding: 30px 100px;
+    width: 100%;
+}
+.projects h2{
+    position: relative;
+    padding: 0px 100px;
+    text-decoration: underline;
+}
+.project-card{
+    padding: 10px;
+    background-color: rgb(223, 221, 221);
+    border-radius: 0px 0px 10px 10px;
+    height: 100%;
+}
+.project-card img{
+    position: relative;
+    width: 100%; 
+}
+
+.project-details .textbox a{
+    text-decoration: none;
+    color: black;
+    background: #21ffe6;
+    padding: 10px;
+    border-radius: 5px;
+
+}
+.project-details .textbox a:hover{
+    font-weight: 700;
+    box-shadow: 0px 4px 10px 1px;
+}
+
