@@ -8,8 +8,8 @@
 /* Navigation Bar */
 
 .navigationBar{
-    position: absolute;
-    padding: 20px 100px;
+    position: relative;
+    padding: 1% 5%;
     top: 0;
     left: 0;
     right: 0;
@@ -23,7 +23,7 @@
     position: relative;
     font-weight: 500;
     letter-spacing: 5px;
-    font-size: 2em;
+    font-size: 200%;
     text-decoration: none;
     color: rgb(240, 235, 235);
 }
@@ -52,6 +52,7 @@
 
 /* Main Page */
 .main{
+    width: 100%;
     position: relative;
     display: flex;
     justify-content: flex-start;
@@ -74,9 +75,8 @@
 .main .main-background{
     position: absolute;
     top: 0;
-    left: 0;
     height: 100vh;
-    right: 0;
+    right: 150px;
     object-fit: cover;
     opacity: 0.17;
     pointer-events: none;
@@ -99,6 +99,8 @@
     content: "";
     animation: name 4s infinite linear;
 }
+
+
 
 @keyframes name {
     0%{
@@ -125,8 +127,18 @@
 }
 .main .imgbox{
     position: relative;
-}
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    width: 50%;
 
+}
+.main .imgbox img{
+    position: absolute;
+    height: 90%;
+    bottom: 0;
+    right: 10px;
+}
 
 
 /* Project section style */
@@ -137,21 +149,25 @@
     column-gap: 40px;
     row-gap: 40px;
     height: 100vh;
-    padding: 30px 100px;
+    padding: 20px 100px;
     width: 100%;
 }
-.projects h2{
+.projects .project-header, .skills{
     position: relative;
     padding: 0px 100px;
-    text-decoration: underline;
+}
+.project-header h2{
+    border-left: 5px solid #21ffe6;
+    padding-left: 10px;
 }
 .project-card{
     padding: 10px;
-    background-color: rgb(223, 221, 221);
+    /* background-color: rgb(223, 221, 221); */
     border-radius: 0px 0px 10px 10px;
     height: 100%;
 }
 .project-card img{
+    margin-bottom: 20px;
     position: relative;
     width: 100%; 
 }
@@ -167,5 +183,150 @@
 .project-details .textbox a:hover{
     font-weight: 700;
     box-shadow: 0px 4px 10px 1px;
+}
+
+/* skills */
+.skills{
+    height: 100vh;
+}
+.skills-header h2{
+    border-left: 5px solid #21ffe6;
+    padding: 10px;
+}
+.skills .skill-image-box{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 100%;
+    justify-content: space-between;
+
+}
+.skills-images{
+    width: 40%;
+    display: grid;
+    grid-template-columns: repeat(2, 100px);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 50px;
+
+}
+.skills-images img{
+    width: 80px;
+    height: 100px;
+}
+.skill-box{
+    width: 60%;
+}
+.skill-container{
+    margin-top: 10px;
+    padding: 0;
+    box-sizing: border-box;
+}
+.skill-container p:nth-child(2){
+    float: right;
+    position: relative;
+    top: -35px;
+    padding: 0;
+    margin: 0;
+}
+.skill{
+    background: #262626;
+    border: 2px solid #21ffe6;
+    padding: 4px;
+    border-radius: 20px;
+}
+.skill-level{
+    position: relative;
+    background: #21ffe6;
+    
+    height: 4px;
+    background: #21ffe6;
+    width: calc(var(--width, 0)*1%);
+    border-radius: 1.5em;
+    animation: grow 2s linear forwards;
+
+}
+
+.skill-level::before{
+    content: "";
+    color: white;
+    
+    display: flex;
+    left: 1.5em;
+    right: 1.5em;
+    
+}
+
+@keyframes grow{
+    from { width: 0%;}
+    to{ width: calc(var(--width, 0)*1%);}    
+}
+
+
+
+
+
+/* mobileView */
+
+@media (max-width: 768px) {
+    
+    .navigationBar{
+    
+        display: flex;
+        flex-direction: column;
+
+    }
+    .navigation-items{
+        display: none;
+    }
+    .main{
+        flex-direction: column;
+        overflow: hidden;
+    }
+    .main::before{
+        width: 300px;
+        transform: skew(-25deg) translate(50%);
+    }
+    .main .main-background{
+        left: 0;
+    }
+    .main .textbox{
+        margin-top: 20px;
+    }
+    .main::before{
+        width: 5%;
+        transform: skew(-35deg);
+    }
+    .main .imgbox img{
+    bottom: 0;
+    height: 100%;
+
+}
+    .skills{
+        position: relative;
+        height: 100%;
+    }
+    .skill-image-box{
+       display: flex;
+       background-color: #21ffe6;
+       justify-content: center;
+       align-items: center;
+       
+    }
+    .skills .skill-image-box{
+        flex-direction: column;
+        
+    }
+    hr{
+        display: block;
+    }
+
+    .project-list{
+
+        display: flex;
+        flex-direction: column;
+    }
 }
 
