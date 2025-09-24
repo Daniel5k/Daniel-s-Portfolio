@@ -11,13 +11,7 @@
 h2{
     font-size: 25;
 }
-body{
-<<<<<<< HEAD
-    background: rgb(15, 5, 5);
-=======
-    background-color: dark;
->>>>>>> d50be2b37a229fac06b7750f03bb99b197909496
-}
+
 
 /* Navigation Bar */
 
@@ -118,13 +112,14 @@ body{
     position: relative;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    gap: 70px;
+    justify-content: center;
+    gap: 40px;
     max-width: 600px;
 }
 .main .textbox h2{
     font-size: 25px;
     font-weight: bold;
+    margin-top: 100px;
 }
 
 /* Animation for my Daniel */
@@ -205,8 +200,9 @@ body{
     text-decoration: none;
     color: black;
     background: #21ffe6;
-    padding: 10px;
+    padding: 8px;
     border-radius: 5px;
+    margin-top: 100px;
 
 }
 
