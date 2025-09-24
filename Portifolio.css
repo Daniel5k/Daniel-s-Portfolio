@@ -12,7 +12,11 @@ h2{
     font-size: 25;
 }
 body{
+<<<<<<< HEAD
     background: rgb(15, 5, 5);
+=======
+    background-color: dark;
+>>>>>>> d50be2b37a229fac06b7750f03bb99b197909496
 }
 
 /* Navigation Bar */
